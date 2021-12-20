@@ -19,7 +19,7 @@ Be mindful of case sensitivity when inputting commands, input them as its shown 
 
 we where not abe to implement several functions those being:
 
--adding to basket from newly created account(we recommend using the already created user account to test this)
+-adding to basket from newly created account(we recommend using the already created user account to test this, as we can still update the basket though)
 
 -generating reports
 
