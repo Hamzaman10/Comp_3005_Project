@@ -19,7 +19,8 @@ Be mindful of case sensitivity when inputting commands, input them as its shown 
 
 we where not abe to implement several functions those being:
 
--adding to basket from newly created account(we recommend using the already created user account to test this, as we can still update the basket though)
+-adding to basket from newly created account(we recommend using the already created user account to test this, as we can still update the basket though. We made the code for 
+adding to basket for new accounts, but it results in an error, so we commented it out) 
 
 -generating reports
 
