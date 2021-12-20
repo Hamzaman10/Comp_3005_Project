@@ -17,6 +17,8 @@ After this everything should be running
 
 Be mindful of case sensitivity when inputting commands, input them as its shown in the console.
 
+follow the commands and everything will work, we reccomend checking the ddl before running so you know what books, authors etc we have in the database before searching
+
 we where not abe to implement several functions those being:
 
 -adding to basket from newly created account(we recommend using the already created user account to test this, as we can still update the basket though. We made the code for 
