@@ -31,3 +31,77 @@ INSERT INTO account_details values('%s', '%s', '%s', '%s', '%s', '%s', '%s')
 using the values the user inputted*/
 
 INSERT INTO address values('%s', '%s', '%s', '%s', '%s', '%s')
+
+/* */
+
+INSERT INTO banking_info values('%s', '%s', '%s')
+
+/* */
+
+INSERT INTO account_main values('%s', '%s', '%s', '%s')
+
+/* */
+
+Select book_name from book 
+where book_name ="'" + name + "'"
+
+/* */
+
+Select book_name from book natural join written_by natural join author
+where first_name="'" + first + "'" AND last_name = "'" + second + "'"
+
+/* */
+
+Select book_name from book
+where isbn ="'" + isbn + "'"
+
+/* */
+
+Select * from book 
+where book_name ="'" + bookList.get(input-1) + "'"
+
+/* */
+
+Select first_name, last_name from author natural join written_by natural join book 
+where book_name ="'" + bookList.get(input-1) + "'"
+
+/* */
+
+Select publisher_name from publisher_books natural join book 
+where book_name ="'" + bookList.get(input-1) + "'"
+
+/* */
+
+Select * from book 
+where book_name ="'" + bookList.get(input-1) + "'"
+
+/* */
+
+Select * from basket_amount 
+where basket_owner ="'" + account_name + "'"
+
+/* */
+
+UPDATE basket_amount "" + "set price = " + price + 
+where basket_owner = "'" + account_name + "'"
+
+/* */
+
+UPDATE basket_amount "" + "set amount_added = " + amount + 
+where basket_owner ="'" + account_name + "'"
+
+/* */
+
+INSERT INTO account_main values('%s', '%s')
+
+/* */
+
+INSERT INTO book values('%s', '%s', '%s', '%s', '%s', '%s', '%s')
+
+/* */
+
+INSERT INTO warehouse values('%s', '%s', '%s', '%s', '%s')
+
+/* */
+
+INSERT INTO author values('%s', '%s', '%s', '%s', '%s')
