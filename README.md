@@ -15,7 +15,7 @@ to get the database download create tables and insert values and run the ddl on 
 
 After this everything should be running
 
-Be mindeful of case sensitivity when inputting commands, input them as its shown in the console.
+Be mindful of case sensitivity when inputting commands, input them as its shown in the console.
 
 we where not abe to implement several functions those being:
 
