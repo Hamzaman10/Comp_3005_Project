@@ -5,9 +5,9 @@ import java.util.Scanner;
 import java.math.BigInteger;
 
 public class functions {
-    private static final String user = "postgres";
-    private static final String password = "Mkonji123-";
-    private static final String database = "Comp3005_Final";
+    private static final String user = null;
+    private static final String password = null;
+    private static final String database = null;
     private static Statement statement;
     private static Connection connection;
     private static Integer accountInfo;
