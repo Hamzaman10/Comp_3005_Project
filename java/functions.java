@@ -256,29 +256,29 @@ public class functions {
                 stmt.executeUpdate("UPDATE basket_amount " + "set price = " + price + "where basket_owner ='" + account_name + "'");
                 stmt.executeUpdate("UPDATE basket_amount " + "set amount_added = " + amount + "where basket_owner ='" + account_name + "'");
                 System.out.println("Database updated successfully ");
-                Random rand = new Random();
-                int id = rand.nextInt(1000);
-                String order_id = null;
-                String query2 = "INSERT INTO basket_main values('%s', '%s','%s','%s','%s')";
-                String sql2 = String.format(query2, id, account_name, accountInfo, order_id, isbn);
-                int resultset4 = statement.executeUpdate(sql2);
-                if(resultset4>0){
-                    System.out.println("added to cart");
-                }
+               // Random rand = new Random();
+                //int id = rand.nextInt(1000);
+               // String order_id = null;
+               // String query2 = "INSERT INTO basket_main values('%s', '%s','%s','%s','%s')";
+               // String sql2 = String.format(query2, id, account_name, accountInfo, order_id, isbn);
+              //  int resultset4 = statement.executeUpdate(sql2);
+               // if(resultset4>0){
+               //     System.out.println("added to cart");
+              //  }
             }
             else{
-                String query = "INSERT INTO basket_amount values('%s', '%s','%s')";
-                String sql = String.format(query, account_name, price, 1);
-                int resultset5 = statement.executeUpdate(sql);
-                Random rand = new Random();
-                int id = rand.nextInt(1000);
-                String order_id = null;
-                String query2 = "INSERT INTO basket_main values('%s', '%s','%s', '%s', '%s')";
-                String sql2 = String.format(query2, id, account_name, accountInfo, order_id, isbn);
-                int resultset6 = statement.executeUpdate(sql2);
-                if((resultset5 & resultset6) > 0){
-                    System.out.println("added to cart");
-                }
+               // String query = "INSERT INTO basket_amount values('%s', '%s','%s')";
+               // String sql = String.format(query, account_name, price, 1);
+               // int resultset5 = statement.executeUpdate(sql);
+               // Random rand = new Random();
+               // int id = rand.nextInt(1000);
+              //  String order_id = null;
+              //  String query2 = "INSERT INTO basket_main values('%s', '%s','%s', '%s', '%s')";
+              //  String sql2 = String.format(query2, id, account_name, accountInfo, order_id, isbn);
+               // int resultset6 = statement.executeUpdate(sql2);
+              //  if((resultset5 & resultset6) > 0){
+               //     System.out.println("added to cart");
+              //  }
 
 
             }
