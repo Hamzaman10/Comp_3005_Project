@@ -1,3 +1,5 @@
+/* the function below creates the table author*/
+
 create table author(
 	 author_id		integer, 
 	 email			varchar(50), 
@@ -7,6 +9,7 @@ create table author(
 	 primary key (author_id)
 );
 
+/* the function below creates the table book*/
 
 create table book(
 	 ISBN			varchar(5), 
@@ -19,6 +22,8 @@ create table book(
 	 primary key (ISBN)
 );
 
+/* the function below creates the table address*/
+
 create table address(
 	 address_id		integer, 
 	 address_type	varchar(10), 
@@ -29,6 +34,8 @@ create table address(
 	 primary key (address_id)
 );
 
+/* the function below creates the table written_by*/
+
 create table written_by(
 	 author_id 		integer, 
 	 ISBN			varchar(5),
@@ -36,6 +43,8 @@ create table written_by(
 	 foreign key (author_id) references author (author_id),
 	 foreign key (ISBN) references book (ISBN)
 );
+
+/* the function below creates the table warehouse*/
 
 create table warehouse(
 	 warehouse_id 	integer, 
@@ -47,12 +56,16 @@ create table warehouse(
 	 foreign key (ISBN) references book (ISBN)
 );
 
+/* the function below creates the table banking_info*/
+
 create table banking_info(
 	 card_number 	numeric(8,0), 
 	 exp_date		varchar(10),
 	 CVV_number		numeric(3,0),
 	 primary key (card_number)
 );
+
+/* the function below creates the account_details*/
 
 create table account_details(
 	 account_name 	varchar(20), 
@@ -65,6 +78,7 @@ create table account_details(
 	 primary key (account_name)
 );
 
+/* the function below creates the table account_main*/
 
 create table account_main(
 	 account_id 	serial,
@@ -76,6 +90,8 @@ create table account_main(
 	 foreign key (card_number) references banking_info (card_number)
 );
 
+/* the function below creates the table orders*/
+
 create table "orders"(
 	 order_id 		varchar(5), 
 	 address_id		integer,
@@ -83,12 +99,16 @@ create table "orders"(
 	 foreign key (address_id) references address (address_id)
 );
 
+/* the function below creates the table tracking_details*/
+
 create table tracking_details(
 	 tracking_id 		serial, 
 	 shipping_status 	varchar(20),
 	 "location"			varchar(20),
 	 primary key (tracking_id)
 );
+
+/* the function below creates the table tracking_main*/
 
 create table tracking_main(
 	 tracking_id 		integer, 
@@ -98,12 +118,16 @@ create table tracking_main(
 	 foreign key (tracking_id) references tracking_details (tracking_id)
 );
 
+/* the function below creates the table basket_amount*/
+
 create table basket_amount(
 	 basket_owner			varchar(20),
 	 price				numeric(10,0),
 	 amount_added		numeric(10,0),
 	 primary key (basket_owner)
 );
+
+/* the function below creates the table basket_main*/
 
 create table basket_main(
 	 account_basket			integer, 
@@ -118,12 +142,16 @@ create table basket_main(
 	 foreign key (basket_owner) references basket_amount (basket_owner)
 );
 
+/* the function below creates the table publisher_details*/
+
 create table publisher_details(
 	 publisher_name 	varchar(20), 
 	 email			varchar(50),
 	 phone_number	numeric(10,0),
 	 primary key (publisher_name)
 );
+
+/* the function below creates the table publisher_books*/
 
 create table publisher_books(
 	 publisher_id 	integer,
@@ -137,16 +165,3 @@ create table publisher_books(
 	 foreign key (ISBN) references book (ISBN)
 );
 
-	(trigger based on lectures)
-
-create trigger restock after update of quantity on book
-	referencing new row as nrow
-	referencing old row as orow
-	for each row
-	when nrow.quantity < 10 
-	and orow.quantity >= 10
-	begin atomic
-		update book 
-		set quantity = 15
-		where quantity < 10
-	end; 
