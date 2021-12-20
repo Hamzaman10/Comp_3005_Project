@@ -1,4 +1,5 @@
-/*trigger based on lectures*/
+/*trigger based on lectures. This trigger activates when a book falls below a quantity of 10, and will be refilled until there are 15 books. 
+The trigger below also does the same thing*/
 create trigger restock after update of quantity on book
 	referencing new row as nrow
 	referencing old row as orow
